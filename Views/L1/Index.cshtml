@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Exercicios";
+}
+
+<h1 class="text-center mt-5">Lista 1</h1>
+
+<div class="container mx-auto mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Exercicio 1 - <small class="text-body-secondary">Quantas equipas há?</small></h2>
+            <p class="lead">
+                <span>Há @ViewBag.ContagemEquipas equipas.</span>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio 2 - <small class="text-body-secondary">Quantos membros há?</small></h2>
+            <p class="lead">
+                <span>Há @ViewBag.ContagemMembros membros.</span>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio 3 - <small class="text-body-secondary">Listar membros por ordem alfabética</small></h2>
+            <p class="lead">
+                @foreach(var membro in @ViewBag.ListaMembrosOrdenada){
+                    <span>@membro, </span>
+                }
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio 4 - <small class="text-body-secondary">Quantos membros há na equipa 1?</small></h2>
+            <p class="lead">
+                <span>Há @ViewBag.ContagemMembrosEquipa1 membros na equipa 1.</span>
+            </p>
+        </div>
+    </div>
+    <hr>
+    
+    <a class="btn btn-secondary btn-lg" asp-controller="Home" asp-action="Index">Back</a>
+</div>

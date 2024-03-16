@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Exercicios";
+}
+
+<h1 class="text-center mt-5">Lista 3</h1>
+
+<div class="container mx-auto mt-5">
+    <div class="row">
+        <div class="col-sm">
+           <h2>Exercicio G - <small class="text-body-secondary">Qual a primeira equipa?</small></h2>
+        </div>
+        <p class="lead">
+            <span>@ViewBag.NomePrimeiraEquipa</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+           <h2>Exercicio H - <small class="text-body-secondary">Existe a equipa "Arsenal da Devesa"?</small></h2>
+        </div>
+        <p class="lead">
+            @if(ViewBag.EquipaArsenalExiste){
+                <span>Sim, a equipa existe.</span>
+            } 
+            else {
+                <span>Não, a equipa não existe.</span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+           <h2>Exercicio I - <small class="text-body-secondary">Quantos membros tem a equipa 4?</small></h2>
+        </div>
+        <p class="lead">
+            @if(ViewBag.QtMembrosEquipaQuatro != null){
+                <span>A equipa tem @ViewBag.QtMembrosEquipaQuatro membros.</span>
+            }
+            else {
+                <span>A equipa não existe</span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+           <h2>Exercicio J - <small class="text-body-secondary">Quantos membros tem a equipa "Leões da Tecla"?</small></h2>
+        </div>
+        <p class="lead">
+            @if(ViewBag.QtMembrosLeoes != null){
+                <span>A equipa tem @ViewBag.QtMembrosLeoes membros.</span>
+            }
+            else {
+                <span>A equipa não existe.</span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+           <h2>Exercicio K - <small class="text-body-secondary">Quantos membros tem a equipa "Arcenal da Debeza"? (Equipa não existe)</small></h2>
+        </div>
+        <p class="lead">
+            @if(ViewBag.QtMembrosEquipaArcenal != null){
+                <span>A equipa tem @ViewBag.QtMembrosEquipaArcenal membros.</span>
+            }
+            else {
+                <span>A equipa não existe.</span>
+            }
+        </p>
+    </div>
+    <hr>
+
+    <a class="btn btn-secondary btn-lg" asp-controller="Home" asp-action="Index">Back</a>
+</div>

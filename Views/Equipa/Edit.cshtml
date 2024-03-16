@@ -1,0 +1,31 @@
+@model ASPNETLogin.Models.Equipa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Equipa</h4>
+<hr />
+<form asp-action="Edit">
+<div class="row">
+    <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomeEquipa" class="control-label"></label>
+                <input asp-for="NomeEquipa" class="form-control" />
+                <span asp-validation-for="NomeEquipa" class="text-danger"></span>
+            </div>
+            <div class="form-group d-grid gap-2 mt-3">
+                <input type="submit" value="Save" class="btn btn-primary btn-lg" />
+                <a class="btn btn-secondary btn-lg" asp-action="Index">Back to List</a>
+            </div>
+    </div>
+</div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

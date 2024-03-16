@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Exercicios";
+}
+
+<h1 class="text-center mt-5">Lista 2</h1>
+
+<div class="container mx-auto mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Exercicio A - <small class="text-body-secondary">Listar todas as equipas</small></h2>
+            <p class="lead">
+                @foreach(var nome in @ViewBag.Equipas) {
+                    <span>@nome, </span>
+                }
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio B - <small class="text-body-secondary">Quantidade de equipas</small></h2>
+        </div>
+        <p class="lead">
+            <span>Número de equipas: @ViewBag.QtEquipas</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio C - <small class="text-body-secondary">Listar equipas ordenadas</small></h2>
+        </div>
+        <p class="lead">
+            @foreach(var nome in @ViewBag.EquipasOrdenadas) {
+                <span>@nome, </span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio D - <small class="text-body-secondary">Listar equipas ordenadas em ordem descendente</small></h2>
+        </div>
+        <p class="lead">
+            @foreach(var nome in @ViewBag.EquipasOrdenadasDesc) {
+                <span>@nome, </span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio E - <small class="text-body-secondary">Qual o nome da equipa número 3?</small></h2>
+        </div>
+        <p class="lead">
+            @ViewBag.NomeEquipaTres
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+           <h2>Exercicio F - <small class="text-body-secondary">Qual o nome da equipa número 88?</small></h2>
+        </div>
+        <p class="lead">
+            @if(ViewBag.NomeEquipaOitentaEOito != null) {
+                <span>@ViewBag.NomeEquipaOitentaEOito</span>
+            }
+            else {
+                <span>Equipa não encontrada.</span>
+            }
+        </p>
+    </div>
+   <hr>
+
+    <a class="btn btn-secondary btn-lg" asp-controller="Home" asp-action="Index">Back</a>
+</div>

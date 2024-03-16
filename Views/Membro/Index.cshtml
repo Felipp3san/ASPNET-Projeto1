@@ -1,0 +1,47 @@
+@model IEnumerable<ASPNETLogin.Models.Membro>
+
+@{
+    ViewData["Title"] = "Membros";
+}
+
+<h1>Membros</h1>
+
+<p>
+    <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover align-middle">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMembro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipaId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipa.NomeEquipa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipa.Id)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

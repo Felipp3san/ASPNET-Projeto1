@@ -1,0 +1,103 @@
+@{
+    ViewData["Title"] = "Exercicios";
+}
+
+<h1 class="text-center mt-5">Lista 4</h1>
+
+<div class="container mx-auto mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Exercicio A1 - <small class="text-body-secondary">Qual o código(ID) de membro mais elevado?</small></h2>
+            <p class="lead">
+                <span>O maior ID de membro é @ViewBag.MaiorIDMembro</span>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio A2 - <small class="text-body-secondary">Qual o código(ID) de membro mais baixo?</small></h2>
+        </div>
+        <p class="lead">
+            <span>O menor ID de equipa é @ViewBag.MenorIDEquipa</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio A3 - <small class="text-body-secondary">Somar coluna (ID tabela equipas)</small></h2>
+        </div>
+        <p class="lead">
+            <span>A soma dos IDs da tabela equipas é @ViewBag.SomaIDEquipas</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio A4 - <small class="text-body-secondary">Somar coluna ID da equipa "Falcões do Picoto" (Tabela equipas)</small></h2>
+        </div>
+        <p class="lead">
+            <span>A Soma dos IDs da equipa "Falcões do Picoto" é @ViewBag.SomaIDFalcoes</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio A5 - <small class="text-body-secondary">Somar a coluna ID dos membros da equipa "Falcões do Picoto"</small></h2>
+        </div>
+        <p class="lead">
+            <span>A soma dos IDs dos membros da equipa "Falcões do Picoto" é @ViewBag.SomaIDMembrosFalcoes</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio B - <small class="text-body-secondary">Quantas equipas tem o membro com nome "Abel"?</small></h2>
+        </div>
+        <p class="lead">
+            <span>Há @ViewBag.ContarEquipasComMembroAbel equipas com membros chamados "Abel"</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio C - <small class="text-body-secondary">Quantos membros há nas equipas "Maximinense" e "Falcões do Picoto"?</small></h2>
+        </div>
+        <p class="lead">
+            <span>As equipas "Maximinense" e "Falcões do Picoto" possuem @ViewBag.ContarMembrosMaximinenseFalcoes membros</span>
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio D - <small class="text-body-secondary">Lista ordenada de nomes dos membros das equipas "Maximinense" e "Falcões do Picoto"</small></h2>
+        </div>
+        <p class="lead">
+            @foreach(var membro in ViewBag.ListaOrdenadaMembrosMaximinenseFalcoes ){
+                <span>@membro, </span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio E - <small class="text-body-secondary">Mostrar nomes e IDs dos membros do Maximinense</small></h2>
+        </div>
+        <p class="lead">
+            @foreach(var membro in ViewBag.ListaMembrosIdsMaximinense){
+                <span>@membro, </span>
+            }
+        </p>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm">
+            <h2>Exercicio F - <small class="text-body-secondary">Mostrar equipas, com os membros ao lado.</small></h2>
+        </div>
+            @foreach(var equipa in ViewBag.ListaEquipaComMembros){
+                <p class="lead">@equipa</p>
+            }
+    </div>
+    
+    <a class="btn btn-secondary btn-lg" asp-controller="Home" asp-action="Index">Back</a>
+</div>
