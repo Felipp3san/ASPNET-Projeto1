@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Exercicios Opcionais";
+}
+
+<h1 class="text-center mt-5">Exercicio Opcional 1</h1>
+
+<div class="container mx-auto mt-5">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Exercicio O1</h2>
+            <p class="lead">
+                <table class="table">
+                    <thead>
+                        <th>Equipas</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                            @foreach (var equipa in ViewBag.ListaEquipas)
+                            {
+                            <tr>
+                                <td>@equipa.NomeEquipa </td>
+                                <td>@Html.ActionLink("Selecionar", "Index", new { id = equipa.Id })</td>
+                            </tr>
+                            }
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm">
+            @if(ViewBag.EquipaSelecionada != null){
+                <h3>Número da Equipa Selecionada: @ViewBag.EquipaSelecionada.Id</h3>
+                <h3>Equipa Selecionada: @ViewBag.EquipaSelecionada.NomeEquipa</h3>
+            }
+            <h3>Total de Membros Da Equipa : @ViewBag.ContagemMembrosEquipa</h3>
+            <h3>Total de Membros: @ViewBag.ContagemMembros</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm">
+            <h3>ID Membro / Nome / Nº Equipa</h3>
+            <p class="lead">
+                @if(ViewBag.ListaMembros != null) {
+                    @foreach (var membro in ViewBag.ListaMembros)
+                    {
+                        <p>@membro.Id - @membro.NomeMembro - @membro.EquipaId</p>
+                    }
+                }
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
